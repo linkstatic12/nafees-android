@@ -1,0 +1,47 @@
+<ion-view view-title="Dish">
+  <ion-content class="padding">
+ <div class="list">
+
+        <a ng-repeat="order in Orders" 
+          
+           class="item item-thumbnail-left" ng-if="order.noOfPlates!=0">
+
+          <img ng-src="{{ order.img }}">
+          <h2>{{ order.name }}</h2>
+          <h4>Serving: {{order.noOfPlates}}</h2></br>
+           <p>Price: {{order.price*order.noOfPlates}}</p>
+        </a>
+
+      </div>
+      <div class="list">
+
+  
+
+  <a class="item item-icon-left" href="#">
+    <i class="icon ion-coffee"></i>
+    Sub-Total
+    <span class="badge badge-assertive">Rs.{{cost}}</span>
+  </a>
+
+  <a class="item item-icon-left" href="#">
+    <i class="icon ion-social-usd"></i>
+    Order Total
+    <span class="badge badge-assertive">Rs.{{costwithGST}}</span>
+  </a>
+
+</div>
+<a class="item item-icon-left" ng-click="SendToChef()">
+    <i class="icon ion-happy-outline"></i>
+   Send to chef
+    
+  </a>
+
+
+<div class="progress-wrapper">
+        <div class="progress">
+          {{humanizeDurationTimer(timer,'s')}}
+        </div>
+        <div round-progress max="timeForTimer" current="timer" clockwise="false" color="#ef473a" rounded="true" class="text-center"></div>
+      </div>
+  </ion-content>
+</ion-view>

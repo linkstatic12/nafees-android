@@ -1,0 +1,26 @@
+<ion-view view-title="Dishes">
+  <ion-content class="padding">
+   <div class="list">
+
+        <a ng-repeat="dish in dishes" 
+           href="#/dish-detail/{{dish._id}}"
+           class="item item-thumbnail-left">
+
+          <img ng-src="{{ dish.img }}">
+          <h2>{{ dish.name }}</h2>
+          <h4>Rs.{{dish.totalPrice}}</h2>
+        
+        </a>
+
+      </div>
+
+      <a class="item item-icon-left assertive" href="#/order">
+    <i class="icon ion-pizza"></i>
+    Order
+  </a>
+   <a class="item item-icon-left assertive" href="#/dash">
+    <i class="icon ion-android-home"></i>
+    Main Menu
+  </a>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,71 @@
+<ion-view view-title="Dish">
+  <ion-content class="padding">
+  <div class="list card">
+
+  <div class="item item-avatar">
+    <h1>{{dish.name}}</h1>
+    <p>Added to the menu on {{dish.created| date:'mediumDate'}}</p>
+  </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="{{dish.img}}">
+    <p class="center-justified">
+      {{dish.description}}
+    </p>
+   
+  
+  
+      
+    <!--   <a href="#" class="subdued">5 Comments</a> -->
+    </p>
+    <!-- <a class="item item-icon-left assertive" href="#/order">
+    <i class="icon ion-pizza"></i>
+    Order
+  </a> -->
+  <div class="row">
+    
+  <div class="col" style="margin-left:-4%;margin-top:14%;"><a class="item item-icon-left assertive">
+    <i class="icon ion-heart"></i>{{likes}} likes</a></div>
+     <div class="col"><ion-list>
+  <ion-radio ng-model="dish.flavours" ng-value="'Normal'">Normal</ion-radio>
+  <ion-radio ng-model="dish.flavours" ng-value="'Mild'">Mild</ion-radio>
+  <ion-radio ng-model="dish.flavours" ng-value="'Hot'">Hot</ion-radio>
+</ion-list></div>
+  <div class="col" style="margin-top:14%;">
+
+<a class="item item-icon-left assertive" ng-click="LikeDish()" >
+    <i class="icon ion-star"></i>Like</a>
+
+  </div>
+  </div>
+  <div class="row">
+  <div class="col" style="margin-top:10px;"><a class="item item-icon-left assertive" ng-click="OrderUp()">
+    <i class="icon ion-plus"></i>
+   
+  </a></div>
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"><h2>{{order.noOfPlates}}</h2></div>
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col" style="margin-top:10px;"><a class="item item-icon-left assertive" ng-click="OrderDown()">
+    <i class="icon ion-minus"></i>
+   
+  </a></div>
+  
+</div>
+ <a class="item item-icon-left assertive" href="#/order">
+    <i class="icon ion-pizza"></i>
+    Order
+  </a>
+   <a class="item item-icon-left assertive" href="#/Detail-Cuisine/{{cuisine}}">
+    <i class="icon ion-android-restaurant"></i>
+    Cuisine Menu
+  </a>
+  
+  </div>
+
+</div>
+
+  </ion-content>
+</ion-view>
